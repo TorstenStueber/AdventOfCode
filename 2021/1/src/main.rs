@@ -1,50 +1,61 @@
 use std::fs;
 
-fn load_input() -> Vec<u32> {
-    let contents = fs::read_to_string("input.txt").unwrap();
+fn load_input() -> String {
+    fs::read_to_string("input.txt").unwrap()
+}
 
-    let lines: Vec<u32> = contents
-        .trim()
-        .split("\n")
+fn parse_input(input: &str) -> Vec<u32> {
+    input
+        .split_whitespace()
         .map(|line| line.parse().unwrap())
+        .collect()
+}
+
+fn count_increments(list: &[u32]) -> usize {
+    list.windows(2).filter(|slice| slice[0] < slice[1]).count()
+}
+
+fn task1(input: &Vec<u32>) -> usize {
+    count_increments(&input)
+}
+
+fn task2(input: &Vec<u32>) -> usize {
+    let windows: Vec<_> = input
+        .windows(3)
+        .map(|window| window[0] + window[1] + window[2])
         .collect();
 
-    return lines;
-}
-
-fn count_increments(list: Vec<u32>) -> u32 {
-    let mut count = 0;
-    let mut previous_entry: Option<u32> = None;
-    for line in list {
-        if let Some(prev) = previous_entry {
-            if prev < line {
-                count += 1;
-            }
-        }
-        previous_entry = Some(line);
-    }
-
-    count
-}
-
-fn task1() {
-    let lines = load_input();
-
-    println!("Task 1: {}", count_increments(lines));
-}
-
-fn task2() {
-    let lines = load_input();
-    let windows = lines[..lines.len() - 2]
-        .iter()
-        .enumerate()
-        .map(|(index, current)| current + lines[index + 1] + lines[index + 2])
-        .collect();
-
-    println!("Task 2: {}", count_increments(windows));
+    count_increments(&windows)
 }
 
 fn main() {
-    task1();
-    task2();
+    let input = parse_input(&load_input());
+    println!("Task 1: {}", task1(&input));
+    println!("Task 2: {}", task2(&input));
+}
+
+#[test]
+fn example() {
+    let test_input = "
+        199
+        200
+        208
+        210
+        200
+        207
+        240
+        269
+        260
+        263";
+
+    let input = parse_input(test_input);
+    assert_eq!(task1(&input), 7);
+    assert_eq!(task2(&input), 5);
+}
+
+#[test]
+fn task() {
+    let input = parse_input(&load_input());
+    assert_eq!(task1(&input), 1301);
+    assert_eq!(task2(&input), 1346);
 }
