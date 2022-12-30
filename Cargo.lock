@@ -11,7 +11,67 @@ name = "advent_of_code_2015_10"
 version = "0.1.0"
 
 [[package]]
+name = "advent_of_code_2015_11"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_12"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_13"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_14"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_15"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_16"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_17"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_18"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_19"
+version = "0.1.0"
+
+[[package]]
 name = "advent_of_code_2015_2"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_20"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_21"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_22"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_23"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_24"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2015_25"
 version = "0.1.0"
 
 [[package]]
