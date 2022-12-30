@@ -2,6 +2,19 @@
 
 This is a complete list of my solutions to all [Advent of Code](https://adventofcode.com/) problems.
 
+Some solutions are in JavaScript and some are done in Rust.
+
+| Year | JavaScript | Rust |
+| ---- | ---------- | ---- |
+| 2015 | 100%       | 100% |
+| 2016 | 100%       | 0%   |
+| 2017 | 100%       | 0%   |
+| 2018 | 100%       | 0%   |
+| 2019 | 100%       | 0%   |
+| 2020 | 100%       | 0%   |
+| 2021 | 0%         | 88%  |
+| 2022 | 0%         | 0%   |
+
 All solutions up to year 2020 are done in JavaScript. Year 2021 is written in Rust. The code is not optimized for readability and just to
 get the job done. There is room for optimizations.
 
