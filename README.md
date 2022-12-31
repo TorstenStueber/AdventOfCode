@@ -15,7 +15,7 @@ Some solutions are in JavaScript and some are done in Rust.
 | 2021 | 0%         | 88%  |
 | 2022 | 0%         | 0%   |
 
-All solutions up to year 2020 are done in JavaScript. Year 2021 is written in Rust. The code is not optimized for readability and just to
+The code is not optimized for readability and just to
 get the job done. There is room for optimizations.
 
 For each problem there is a solution that runs in under 15 seconds. Not all of my solutions satisfy
