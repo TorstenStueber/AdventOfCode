@@ -106,6 +106,33 @@ name = "advent_of_code_2015_9"
 version = "0.1.0"
 
 [[package]]
+name = "advent_of_code_2016_01"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2016_02"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2016_03"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2016_04"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2016_05"
+version = "0.1.0"
+dependencies = [
+ "md-5",
+]
+
+[[package]]
+name = "advent_of_code_2016_06"
+version = "0.1.0"
+
+[[package]]
 name = "advent_of_code_2021_1"
 version = "0.1.0"
 
