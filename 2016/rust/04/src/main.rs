@@ -79,7 +79,7 @@ fn task2(input: &Input) -> u32 {
 fn main() {
     let input = parse_input(&load_input());
     println!("Task 1: {}", task1(&input));
-    println!("Task 1: {}", task2(&input));
+    println!("Task 2: {}", task2(&input));
 }
 
 #[test]
