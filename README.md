@@ -7,7 +7,7 @@ Some solutions are in JavaScript and some are done in Rust.
 | Year | JavaScript | Rust |
 | ---- | ---------- | ---- |
 | 2015 | 100%       | 100% |
-| 2016 | 100%       | 44%  |
+| 2016 | 100%       | 68%  |
 | 2017 | 100%       | 0%   |
 | 2018 | 100%       | 0%   |
 | 2019 | 100%       | 0%   |

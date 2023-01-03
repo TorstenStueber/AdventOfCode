@@ -149,9 +149,33 @@ fn execute(input: &Input) -> u32 {
     };
 
     let heuristic = |(position, floors): &State| -> u32 {
-        let h = (floors[0].len() * 6 + floors[1].len() * 4 + floors[2].len() * 2) as i32
-            - (3 - *position as i32) * 3;
-        h.max(0) as u32
+        let position = *position as u32;
+        let mut lengths: [u32; 4] = [0; 4];
+        lengths
+            .iter_mut()
+            .enumerate()
+            .for_each(|(index, entry)| *entry = floors[index].len() as u32);
+
+        lengths[position as usize] -= 1;
+        let min_nonempty_floor = if lengths[0] > 0 {
+            0
+        } else if lengths[1] > 0 {
+            1
+        } else if lengths[2] > 0 {
+            2
+        } else {
+            3
+        };
+
+        let mut h = lengths[0] * 6 + lengths[1] * 4 + lengths[2] * 2;
+
+        if min_nonempty_floor <= position {
+            h -= 3 - position;
+        } else {
+            h -= 3 - min_nonempty_floor;
+            h += min_nonempty_floor - position;
+        }
+        h
     };
 
     fn next_states<'a>((position, floors): &State<'a>) -> Vec<State<'a>> {

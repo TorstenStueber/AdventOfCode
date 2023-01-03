@@ -153,6 +153,36 @@ name = "advent_of_code_2016_11"
 version = "0.1.0"
 
 [[package]]
+name = "advent_of_code_2016_12"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2016_13"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2016_14"
+version = "0.1.0"
+dependencies = [
+ "md-5",
+]
+
+[[package]]
+name = "advent_of_code_2016_15"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2016_16"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2016_17"
+version = "0.1.0"
+dependencies = [
+ "md-5",
+]
+
+[[package]]
 name = "advent_of_code_2021_1"
 version = "0.1.0"
 
