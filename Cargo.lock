@@ -183,6 +183,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "advent_of_code_2016_18"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2016_19"
+version = "0.1.0"
+
+[[package]]
 name = "advent_of_code_2021_1"
 version = "0.1.0"
 
@@ -268,6 +276,14 @@ version = "0.1.0"
 
 [[package]]
 name = "advent_of_code_2021_9"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2024_1"
+version = "0.1.0"
+
+[[package]]
+name = "advent_of_code_2024_2"
 version = "0.1.0"
 
 [[package]]

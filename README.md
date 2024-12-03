@@ -14,6 +14,8 @@ Some solutions are in JavaScript and some are done in Rust.
 | 2020 | 100%       | 0%   |
 | 2021 | 0%         | 88%  |
 | 2022 | 0%         | 0%   |
+| 2023 | 0%         | 0%   |
+| 2024 | 0%         | 13%  |
 
 The code is not optimized for readability and just to
 get the job done. There is room for optimizations.
