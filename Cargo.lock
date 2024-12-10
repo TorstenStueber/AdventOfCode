@@ -283,6 +283,10 @@ name = "advent_of_code_2024_1"
 version = "0.1.0"
 
 [[package]]
+name = "advent_of_code_2024_10"
+version = "0.1.0"
+
+[[package]]
 name = "advent_of_code_2024_2"
 version = "0.1.0"
 
