@@ -4,14 +4,14 @@ fn load_input() -> String {
     fs::read_to_string("input.txt").unwrap()
 }
 
-type Input = u32;
+type Input = u64;
 
 fn parse_input(input: &str) -> Input {
     input.trim().parse().unwrap()
 }
 
-fn is_prime(primes: &mut (Vec<u32>, Vec<bool>), n: u32) -> bool {
-    let square_root = (n as f64).sqrt().floor() as u32;
+fn is_prime(primes: &mut (Vec<u64>, Vec<bool>), n: u64) -> bool {
+    let square_root = (n as f64).sqrt().floor() as u64;
 
     for prime in &primes.0 {
         if n % *prime == 0 {
@@ -28,14 +28,14 @@ fn is_prime(primes: &mut (Vec<u32>, Vec<bool>), n: u32) -> bool {
     return true;
 }
 
-fn factorize(primes: &mut (Vec<u32>, Vec<bool>), mut n: u32) -> Vec<(u32, u32)> {
+fn factorize(primes: &mut (Vec<u64>, Vec<bool>), mut n: u64) -> Vec<(u64, u64)> {
     if is_prime(primes, n) {
         return vec![(n, 1)];
     }
 
     let mut factors = vec![];
 
-    let mut square_root = (n as f64).sqrt().floor() as u32;
+    let mut square_root = (n as f64).sqrt().floor() as u64;
 
     for prime in &primes.0 {
         if *prime > square_root {
@@ -47,7 +47,7 @@ fn factorize(primes: &mut (Vec<u32>, Vec<bool>), mut n: u32) -> Vec<(u32, u32)> 
 
         if n % *prime == 0 {
             n /= *prime;
-            let mut multiplicity = 1u32;
+            let mut multiplicity = 1u64;
             while n % *prime == 0 {
                 n /= *prime;
                 multiplicity += 1;
@@ -57,20 +57,20 @@ fn factorize(primes: &mut (Vec<u32>, Vec<bool>), mut n: u32) -> Vec<(u32, u32)> 
                 return factors;
             }
 
-            square_root = (n as f64).sqrt().floor() as u32;
+            square_root = (n as f64).sqrt().floor() as u64;
         }
     }
 
     unreachable!()
 }
 
-fn task1(input: &Input) -> u32 {
+fn task1(input: &Input) -> u64 {
     let mut primes = (vec![], vec![false, false]);
     for i in 2.. {
         let factors = factorize(&mut primes, i);
 
         let sum_of_factors = factors.iter().fold(1, |acc, (prime, multiplicity)| {
-            acc * (prime.pow(multiplicity + 1) - 1) / (prime - 1)
+            acc * (prime.pow(*multiplicity as u32 + 1) - 1) / (prime - 1)
         });
 
         if sum_of_factors * 10 > *input {
@@ -81,16 +81,16 @@ fn task1(input: &Input) -> u32 {
     unreachable!()
 }
 
-fn task2(input: &Input) -> u32 {
+fn task2(input: &Input) -> u64 {
     let mut primes = (vec![], vec![false, false]);
     for i in 2.. {
         let factors = factorize(&mut primes, i);
 
         fn find_all_factors(
-            remaining_factors: &[(u32, u32)],
-            current_product: u32,
-            min_product: u32,
-            sum: &mut u32,
+            remaining_factors: &[(u64, u64)],
+            current_product: u64,
+            min_product: u64,
+            sum: &mut u64,
         ) {
             if remaining_factors.len() == 0 {
                 if current_product >= min_product {
@@ -103,7 +103,7 @@ fn task2(input: &Input) -> u32 {
             for n in 0..=multiplicity {
                 find_all_factors(
                     &remaining_factors[1..],
-                    current_product * factor.pow(n),
+                    current_product * factor.pow(n as u32),
                     min_product,
                     sum,
                 );

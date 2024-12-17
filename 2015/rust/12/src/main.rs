@@ -10,7 +10,7 @@ fn parse_input(input: &str) -> Input {
     input.trim().chars().collect()
 }
 
-fn task1(input: &Input) -> u32 {
+fn task1(input: &Input) -> i32 {
     let mut neg = false;
     let mut acc = 0;
     let mut current = 0;
@@ -19,9 +19,9 @@ fn task1(input: &Input) -> u32 {
             current = current * 10 + *c as u8 - '0' as u8;
         } else {
             if neg {
-                acc -= current as u32;
+                acc -= current as i32;
             } else {
-                acc += current as u32;
+                acc += current as i32;
             }
             current = 0;
             neg = *c == '-';
@@ -30,7 +30,7 @@ fn task1(input: &Input) -> u32 {
     acc
 }
 
-fn parse_object(input: &Input, index: &mut usize) -> u32 {
+fn parse_object(input: &Input, index: &mut usize) -> i32 {
     let mut neg = false;
     let mut acc = 0;
     let mut current = 0;
@@ -60,9 +60,9 @@ fn parse_object(input: &Input, index: &mut usize) -> u32 {
             current = current * 10 + c as u8 - '0' as u8;
         } else {
             if neg {
-                acc -= current as u32;
+                acc -= current as i32;
             } else {
-                acc += current as u32;
+                acc += current as i32;
             }
             current = 0;
             neg = c == '-';
@@ -92,7 +92,7 @@ fn parse_object(input: &Input, index: &mut usize) -> u32 {
     }
 }
 
-fn task2(input: &Input) -> u32 {
+fn task2(input: &Input) -> i32 {
     let mut index = 0;
     parse_object(input, &mut index)
 }
